@@ -1,0 +1,9 @@
+venv/
+env/
+.vscode/
+.replit
+*.zip
+__pycache__/
+*.sqlite3
+db.*
+media/
