@@ -14,6 +14,7 @@ def get_schoolkid(name):
         return None
     return schoolkid
 
+
 def fix_marks(name):
     schoolkid = get_schoolkid(name)
     if schoolkid:
