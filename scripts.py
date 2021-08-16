@@ -1,3 +1,4 @@
+import random
 from datacenter.models import (Chastisement, Commendation, Lesson, Mark,
                                Schoolkid)
 
@@ -13,4 +14,16 @@ def get_schoolkid(name):
         return None
     return schoolkid
 
-    
+def fix_marks(name):
+    schoolkid = get_schoolkid(name)
+    if schoolkid:
+        negative_marks = Mark.objects.filter(schoolkid=schoolkid, points__lte=3)
+        if negative_marks:
+            for negative_mark in negative_marks:
+                negative_mark.points = random.choice((4,5))
+                negative_mark.save()
+            print("Оценки исправлены!") 
+        else:
+            print("У ученика нет плохих оценок!")
+
+           
