@@ -27,4 +27,15 @@ def fix_marks(name):
         else:
             print("У ученика нет плохих оценок!")
 
-           
+
+def remove_chastisements(name):
+    schoolkid = get_schoolkid(name)
+    if schoolkid:
+        chastisements = Chastisement.objects.filter(schoolkid=schoolkid)
+        if chastisements:
+            chastisements.delete()
+            print("Замечания удалены!")
+        else:
+            print("У ученика нет замечаний!")
+        
+            
