@@ -91,4 +91,4 @@ def add_commendation(name, subject):
         )
         print("Похвала добавлена!")
     else:
-        print("")        
+        print("Такого урока нет!")        
