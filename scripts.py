@@ -72,7 +72,7 @@ def add_commendation(name, subject):
     lesson = Lesson.objects.filter(
         year_of_study=6,
         group_letter="А",
-        subject__title=subject).first()
+        subject__title=subject).order_by('?').first()
     if lesson:
         Commendation.objects.create(
             schoolkid=schoolkid,
