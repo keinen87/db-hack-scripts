@@ -17,8 +17,6 @@ def get_schoolkid(name):
 
 def fix_marks(name):
     schoolkid = get_schoolkid(name)
-    if not schoolkid:
-        print("Ученика не существует, попробуйте еще раз!")
     negative_marks = Mark.objects.filter(schoolkid=schoolkid, points__lte=3)
     if negative_marks:
         negative_marks_count = negative_marks.update(points=random.choice((4,5)))
@@ -29,8 +27,6 @@ def fix_marks(name):
 
 def remove_chastisements(name):
     schoolkid = get_schoolkid(name)
-    if not schoolkid:
-        print("Ученика не существует, попробуйте еще раз!")
     chastisements = Chastisement.objects.filter(schoolkid=schoolkid)
     if chastisements:
         chastisements_count, _ = chastisements.delete()
@@ -41,8 +37,6 @@ def remove_chastisements(name):
 
 def add_commendation(name, subject):
     schoolkid = get_schoolkid(name)
-    if not schoolkid:
-        print("Ученика не существует, попробуйте еще раз!")
     commendations = [
         "Молодец!",
         "Отлично!",
