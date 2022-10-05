@@ -36,7 +36,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ```python
 >>> fix_marks('Авдеева Екатерина')
-Оценки исправлены!
+Оценки исправлены в количестве 5 шт.
 ```
 
 ## Удаление всех замечаний
@@ -46,7 +46,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ```python
 >>> remove_chastisements('Авдеева Екатерина')
-Замечания удалены!
+Замечания удалены в количестве 10 шт.
 ```
 
 ## Добавление похвалы ученику из 6А
