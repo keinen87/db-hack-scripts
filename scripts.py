@@ -70,8 +70,8 @@ def add_commendation(name, subject):
         "Теперь у тебя точно все получится!"
     ]    
     lesson = Lesson.objects.filter(
-        year_of_study=6,
-        group_letter="А",
+        year_of_study=schoolkid.year_of_study,
+        group_letter=schoolkid.group_letter,
         subject__title=subject).order_by('?').first()
     if lesson:
         Commendation.objects.create(
